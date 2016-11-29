@@ -7,4 +7,4 @@ T2=([0,0,0,1,2,3,3,3]);
 T3=([0,0,0,1,1,1]);
 %(c) on retrouve le polynome de bernstein
 
-fonctions_bsplines(3, T2); %fonctions_bslines(m, Tableau des point Tn)
+fonctions_bsplines(2, T2); %fonctions_bslines(m, Tableau des point Tn)

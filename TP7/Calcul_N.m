@@ -1,7 +1,7 @@
 function[answer]=Calcul_N(m, i, t, T)
 %fonction recursive pour calculer N(m, i)
   if(m == 0)
-      if( (T(i) <= t)&&(t <= T(i+1)) ) % condition d'arret
+      if( (T(i) <= t)&&(t <T(i+1)) ) % condition d'arret
          answer = 1;
       else
          answer = 0;

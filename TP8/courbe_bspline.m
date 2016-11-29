@@ -1,16 +1,16 @@
-function[answer] = courbe_spline(data, m)
-  x = linespace(0,1);
-  y = linespace(0,1);
-  X = [];
-  Y = [];
-  for j = 1:length(data)
-     if(i
+function[answer] = courbe_bspline(P,T, m)
+  x = linspace(T(m),T((length(P)/2)+1));
+  SX = [zeros(length(x))];
+  SY = [zeros(length(x))];
+  for j = 1:length(P)/2
+     PX(j) = P(j*2 -1);
+     PY(j) = P(j*2);
+  endfor  
+  for i = 1:length(P)/2
+    for t = 1:length(x)
+      SX(t) += PX(i) * @Calcul_N(m, i , x(t), T);
+      SY(t) += PY(i) * @Calcul_N(m, i , x(t), T);
+     endfor
   endfor
-  for t = 1:length(x)
-    for i=1:length(data)/2
-      x(t) += X(i)*@Calcul_N(m, i, x(t) , T); 
-      y(t) += Y(i)*@Calcul_N(m, i, y(t) , T); 
-    endfor
-  endfor
-  plot(x, y)
+  plot(SX, SY);
 end
